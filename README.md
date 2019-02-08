@@ -1,2 +1,3 @@
-# project5
-Basic instructions go here.
+# minimism
+
+- Andrew was here
