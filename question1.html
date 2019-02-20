@@ -2,21 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="question.css" rel="stylesheet" type="text/css" />
+  <script src="question.js"></script>
   <title>Question 1</title>
 </head>
-<body>
-  <p>Fantastic! iPhone Xs are great. What characteristics do you give a shit about? Don't be stupid and check all that apply.</p>
-  <div id="button-container">
-    <button>OS</button>
-    <button>Size</button>
-    <button>CPU</button>
-    <button>Camera</button>
-  </div>
-  <div class="submit">
-    <button><a href="home.html">BACK</a></button>
-    <button><a href="question2.html">NEXT</a></button>
-  </div>
+<body onload="setup()">
+  <h1>Fantastic! iPhone Xs are great. What characteristics do you give a shit about? Don't be stupid and check all that apply.</h1>
+  <table class="buttons-container">
+    <tr>
+    <td id="button-0" class="button"><div id="selection-0" class="dot"></div>OS</td>
+    <td id="button-1" class="button"><div id="selection-1" class="dot"></div>Size</td>
+    <td id="button-2" class="button"><div id="selection-2" class="dot"></div>CPU</td>
+    <td id="button-3" class="button"><div id="selection-3" class="dot"></div>Camera</td>
+  </tr>
+  </table>
+  <table class="buttons-container">
+    <tr>
+    <td><button class="submit-button"><a href="home.html">BACK</a></button></td>
+    <td><button class="submit-button"><a href="question2.html">NEXT</a></button></td>
+  </tr>
+  </table>
 </body>
 </html>
