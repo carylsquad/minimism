@@ -2,21 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Question 2</title>
+  <link href="question.css" rel="stylesheet" type="text/css" />
+  <script src="question.js"></script>
+  <title>Question 1</title>
 </head>
-<body>
-  <p>What piece of garbage do you currently use?</p>
-  <div id="button-container">
-    <button>iPhone X</button>
-    <button>Galaxy S9</button>
-    <button>Pixel 3/XL</button>
-    <button>Camera</button>
-  </div>
-  <div class="submit">
-    <button><a href="home.html">BACK</a></button>
-    <button><a href="question2.html">NEXT</a></button>
-  </div>
+<body onload="setup()">
+  <h1>What piece of garbage do you currently use?</h1>
+  <table class="buttons-container">
+    <tr>
+    <td id="button-0" class="button"><div id="selection-0" class="dot"></div>iPhone X</td>
+    <td id="button-1" class="button"><div id="selection-1" class="dot"></div>Galaxy S9</td>
+    <td id="button-2" class="button"><div id="selection-2" class="dot"></div>Pixel 3/XL</td>
+    <td id="button-3" class="button"><div id="selection-3" class="dot"></div>OnePlus 6</td>
+  </tr>
+  </table>
+  <table class="buttons-container">
+    <tr>
+    <td><button class="submit-button"><a href="question1.html">BACK</a></button></td>
+    <td><button class="submit-button"><a href="question2.html">NEXT</a></button></td>
+  </tr>
+  </table>
 </body>
 </html>
