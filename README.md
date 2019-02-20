@@ -9,10 +9,7 @@ Use as background color
 #c2d2e9
 Lightest: #f1f1f0
 
-Font: Avenir
+Font: Avenir!
 
 Unselected Buttons: #f1f1f0 white outline, blue background
 Selected Button: #f1f1f0 white fill, blue text
-
-
-
