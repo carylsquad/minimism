@@ -1,9 +1,83 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-body{
-  text-align:center;
-}
-.title{
-  font-family: 'Monsterrat';
 
+body{
+  font-family: sans-serif;
+  background-color: #091d36;
+}
+
+#container{
+  position: absolute;
+  text-align:center;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  width: 95%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#title{
+  margin: 0;
+  padding-bottom: 10px;
+
+  color: #f1f1f0;
+  text-transform: lowercase;
+  font-size: 50pt;
+  font-weight: bold;
+}
+
+#info{
+  margin: 0;
+  color: #3a4e7a;
+  padding: 0px 50px 60px 50px;
+  font-size: 20pt;
+}
+
+.submit{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items:center;
+
+  margin: auto;
+}
+
+input{
+  width: 50%;
+  border-radius: 10px;
+  font-size: 20px;
+  padding-left: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  color: #5e83ba;
+  background-color:#f1f1f0;
+  border: none;
+}
+
+input::placeholder{
+  color: #B0BEC5;
+}
+
+a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  padding: 15px 15px 15px 15px;
+
+  background-color:#3a4e7a;
+  color:#f1f1f0;
+  font-size: 24px;
+  text-decoration: none;
+
+  border-radius: 10px;
+}
+
+a:hover{
+  background-color:#5e83ba;
+  border-color: #5e83ba;
 }
