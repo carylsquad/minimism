@@ -4,25 +4,23 @@
   <meta charset="UTF-8">
   <link href="css/question.css" rel="stylesheet" type="text/css" />
   <script src="question.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <title>Question 1</title>
 </head>
 <body onload="setup()">
   <div id="container">
-  <h1>Fantastic! iPhone Xs are great. What characteristics do you give a shit about? Don't be stupid and check all that apply.</h1>
-  <table class="buttons-container">
-    <tr>
-    <td id="button-0" class="button"><div id="selection-0" class="dot"></div>OS</td>
-    <td id="button-1" class="button"><div id="selection-1" class="dot"></div>Size</td>
-    <td id="button-2" class="button"><div id="selection-2" class="dot"></div>CPU</td>
-    <td id="button-3" class="button"><div id="selection-3" class="dot"></div>Camera</td>
-  </tr>
-  </table>
-  <table class="buttons-container">
-    <tr>
-    <td><button class="submit-button"><a href="home.html">BACK</a></button></td>
-    <td><button class="submit-button"><a href="question2.html">NEXT</a></button></td>
-  </tr>
-  </table>
+    <h1 id="text">Fantastic! iPhone Xs are great. What characteristics do you give a shit about? Don't be stupid and check all that apply.</h1>
+    <div class="buttons-container">
+      <div class="button" onclick="toggle(this)">OS</div>
+      <div class="button" onclick="toggle(this)">Size</div>
+      <div class="button" onclick="toggle(this)">CPU</div>
+      <div class="button" onclick="toggle(this)">Camera</div>
+    </div>
+    <div class="buttons-container">
+      <a class="submit-button" href="home.html"><i class="fa fa-arrow-left"></i></a>
+      <a class="submit-button" href="question2.html"><i class="fa fa-arrow-right"></i></a>
+    </div>
   </div>
 </body>
 </html>

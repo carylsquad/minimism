@@ -1,8 +1,8 @@
 h1 {
   text-align: center;
-    font-weight: 500;
-    padding: 10px;
-    margin: 5px;
+  font-weight: 500;
+  padding: 10px;
+  margin: 5px;
 }
 
 body {
@@ -25,52 +25,42 @@ body {
 }
 
 
+.result{
+  font-size:50px;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow:  0 0 20px black;
+  font-weight: 600;
+}
+
 a {
   color: inherit;
   text-decoration: inherit;
 }
 
 .buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   margin: auto;
   padding: 10px;
   margin-top: 40px;
 }
 
-.button {
-  display: inline;
-  border: 4px solid #f1f1f0;
-  border-radius: 8px;
+.submit-button {
+  background-color:#3a4e7a;
+  color:#f1f1f0;
+  font-size: 24px;
+  text-decoration: none;
+  width: 50px;
   padding: 15px;
   margin: 15px;
-  font-size: 25px;
-  vertical-align: bottom;
-
-  -webkit-touch-callout: none; /* iOS Safari */
-   -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-      -moz-user-select: none; /* Firefox */
-       -ms-user-select: none; /* Internet Explorer/Edge */
-           user-select: none; /* Non-prefixed version, currently
-                                 supported by Chrome and Opera */
+  border:none;
+  border-radius: 10px;
 }
 
-/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_circles */
-
-.submit-button {
-  padding: 12px;
-  margin: 10px;
-  background-color: #f1f1f0;
-  border: 0;
-  border-radius: 4px;
-  color: #091d36;
-  text-decoration: none;
-  font-size: 20px;
-}
-
-.result{
-  font-size:50px; 
-  text-align: center; 
-  color:red; 
-  text-shadow:  0 0 20px black;
-  font-weight: 600;
+.submit-button:hover{
+  background-color:#5e83ba;
+  border-color: #5e83ba;
 }
