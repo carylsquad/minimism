@@ -59,7 +59,7 @@ input::placeholder{
   color: #B0BEC5;
 }
 
-a{
+#button{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,9 +72,10 @@ a{
   text-decoration: none;
 
   border-radius: 10px;
+  border: none;
 }
 
-a:hover{
+#button:hover{
   background-color:#5e83ba;
   border-color: #5e83ba;
 }
