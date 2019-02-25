@@ -1,11 +1,16 @@
+var curr_page;
+
 function setup(){
-  var buttons = document.getElementsByClassName("button");
+  var buttons = $(".button");
   for(var i = 0; i<buttons.length; i++){
     //light by default
     buttons[i].style.backgroundColor="rgb(194, 210, 233)";
     buttons[i].style.borderColor="#f1f1f0";
     buttons[i].style.color="rgb(58, 78, 122)"
   }
+
+  $("#p1").show();
+  curr_page=1;
 }
 
 function toggle(button){
@@ -26,3 +31,43 @@ function toggle(button){
 
   }
 }
+
+function next(){
+  //if we're at the results page
+  if(curr_page==4){
+    curr_page=1;
+    $("#p4").fadeOut(400, function(){
+      //go back to the home page
+      window.location.href="home.html";
+    });
+  }
+  else{
+    //hide the current page
+    $("#p"+curr_page.toString()).fadeOut(400, function(){
+      curr_page++;
+      //and go to the next one
+      $("#p"+curr_page.toString()).fadeIn(400)
+    });
+
+  }
+
+}
+function back(){
+  //if we're at the first question
+  if(curr_page==1){
+    $("#p1").fadeOut(400, function(){
+      //go bck to the home/search page
+      window.location.href="home.html";
+    });
+  }
+  //otherwise
+  else{
+    //go back to the previous page on the current track
+    $("#p"+curr_page.toString()).fadeOut(400, function(){
+      curr_page--;
+      $("#p"+curr_page.toString()).fadeIn(400)
+    });
+  }
+}
+
+window.onload=setup;
