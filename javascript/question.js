@@ -1,4 +1,6 @@
 var curr_page;
+var result=[];
+
 
 function setup(){
   var buttons = $(".button");
@@ -33,9 +35,40 @@ function toggle(button){
 }
 
 function next(){
+  
+
+  var buttons = $(".button");
+  var temp=[];
+  var i =0;
+  if (curr_page==2){i=4;}
+  else if(curr_page ==3) {i=9}
+
+  for(i; i<buttons.length; i++){
+    //for chosen buttonsm add their text to the reuslt array
+    if(buttons[i].style.backgroundColor=="rgb(94, 131, 186)"){
+      //for the "other" button, add the user input into the array
+      if(buttons[i].innerHTML=="Other"){
+        var text=document.getElementById("myPhone").value;
+        temp.push(text);
+      }else{
+      temp.push(buttons[i].innerHTML)}
+    }
+  }
+  result.push(temp);
+  
+  if(curr_page==3){
+    var r1=result[0].join(', '); //reuslt of the first quetsion 
+    var r2=result[1].toString();  //reuslt of the second quetsion 
+    var r3=result[2].join(', ');  //reuslt of the third quetsion 
+    document.getElementById("analysis").innerHTML="Iphone XS has better "+r1+", which are all the things that you care about in your phone. Also, your current phone "
+    +r2 +" does a worse job supporting "+r3 +" than Iphone XS" ;
+    
+  }
+  
   //if we're at the results page
   if(curr_page==4){
     curr_page=1;
+    reuslt=[];
     $("#p4").fadeOut(400, function(){
       //go back to the home page
       window.location.href="home.html";
@@ -50,7 +83,6 @@ function next(){
     });
 
   }
-
 }
 function back(){
   //if we're at the first question
@@ -67,6 +99,7 @@ function back(){
       curr_page--;
       $("#p"+curr_page.toString()).fadeIn(400)
     });
+    result.pop();
   }
 }
 
