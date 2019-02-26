@@ -77,3 +77,12 @@ a {
   background-color:#5e83ba;
   border-color: #5e83ba;
 }
+
+input{
+  width: 10%;
+  border-radius: 8px;
+  font-size: 20px;
+  border: 0px solid #f1f1f0;
+  padding: 10px;
+  margin: 15px;
+}

@@ -70,4 +70,27 @@ function back(){
   }
 }
 
+function expand(){ 
+  var myphone=document.getElementById("myPhone");
+  var otherButton=document.getElementById("other");
+  var result="";
+  if (myphone.style.display = "none"){
+    myphone.style.display = "block";
+    toggle(otherButton);
+    
+  }
+  myphone.addEventListener("keyup", function(event){
+    if(event.keyCode===13 && myphone.value!=""){
+      event.preventDefault();
+      myphone.style.display="none";
+      
+      result=myphone.value;
+    }})
+}
+
+
+
+
+
+
 window.onload=setup;
