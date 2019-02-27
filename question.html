@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="css/question.css" rel="stylesheet" type="text/css" />
+  <script src="javascript/question.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <title>Phone Questions</title>
+</head>
+<body>
+    <div id="content" class="container">
+        <h1 id="question">Fantastic! iPhone XSs are great. What characteristics do you give a shit about? Don't be stupid and check all that apply.</h1>
+        <div class="buttons-container">
+          <div class="button" id="button0" onclick="toggle(this)">OS</div>
+          <div class="button" id="button1" onclick="toggle(this)">Size</div>
+          <div class="button" id="button2" onclick="toggle(this)">CPU</div>
+          <div class="button" id="button3" onclick="toggle(this)">Camera</div>
+          <div id= "other" class="button" onclick="expand()" >Other</div> 
+          <input type="text" id="response" placeholder="My phone is..." autofocus="autofocus">    
+        </div>
+        <div class="buttons-container">
+          <button class="nav-button" id="back" onclick="back()"><i class="fa fa-arrow-left"></i></button>
+          <button class="nav-button" id="next" onclick="next()"><i class="fa fa-arrow-right"></i></button>
+        </div>
+      </div>
+</body>
+</html>
