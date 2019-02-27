@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link href="css/result.css" rel="stylesheet" type="text/css" />
+  <link href="css/result.css" rel="stylesheet" type="text/css"/>
   <title>Result</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="javascript/result.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 </head>
 
@@ -12,11 +14,10 @@
 <body>
   <h1>Based on your feedback, you should... </h1>
   <p class="result">Treat yourself!</p>
-  <h1>Based on your current phone and usage habits, we really think you shouldn't have needed help to make such an easy decision.</h1>
-
+  <h1 id="justification"></h1>
+  <div id="graph"></div>
   <div class="buttons-container">
-    <a class="submit-button" href="question3.html"><i class="fa fa-arrow-left"></i></a>
-    <a class="submit-button" href="home.html"><i class="fa fa-refresh"></i></a>
+    <a class="nav-button" href="home.html"><i class="fa fa-refresh"></i></a>
   </div>
 </div>
 </body>
