@@ -18,7 +18,7 @@ function setup() {
             'type': 'pie',
             'sort': false,
           }],
-        
+
           'layout': {
             paper_bgcolor: "rgba(50,50,50,0)",
             title: 'Responses Happiest ' + chartString + ' Chose',
@@ -26,7 +26,6 @@ function setup() {
                 color: "#ffffff",
             }
           }
-        
         }
     Plotly.newPlot('graph', pie_chart.data, pie_chart.layout)
 }
