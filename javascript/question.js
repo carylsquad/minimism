@@ -13,12 +13,12 @@ var QuestionQueue = [];
 var QueueHistory = [];
 
 // Questions
-var iPhoneFirstQuestion = new Question("Fantastic! iPhone XS is great. What characteristics do you give a shit about? Don't be stupid and check all that apply.", ["OS", "Size", "CPU", "Camera"], "None");
+var iPhoneFirstQuestion = new Question("Fantastic! iPhone XS is great. What characteristics do you give a shit about? Don't be stupid and check all that apply.", ["OS", "Size", "CPU", "Camera"], "I care...");
 var iPhoneSecondQuestion = new Question("What piece of garbage do you currently use?", ["iPhone X", "Galaxy S9", "Pixel 3/XL", "OnePlus 6T"], "My phone is...");
 var iPhoneThirdQuestion = new Question("What do you waste your time on when using your phone?", ["Social Media", "Video Streaming", "Messaging", "Games"], "I use...");
 
 var foodFirstQuestion = new Question("Okay, that might taste good. Why are you even interested in Pocky? Don't be lazy and check all that apply.", ["Flavor", "Nutrition", "Allergies", "Portability"], "I like...");
-var foodSecondQuestion = new Question("In all seriousness, how do you feel about the price?", ["Bad", "Okay", "Good", "Indifferent"], "None");
+var foodSecondQuestion = new Question("In all seriousness, how do you feel about the price?", ["Bad", "Okay", "Good", "Indifferent"], "It's...");
 var foodThirdQuestion = new Question("When was the last time you wasted your money on some Pocky?", ["This week", "This month", "This year", "Never"], "It was...");
 
 // Initial Setup:
@@ -28,6 +28,7 @@ function setup(){
   for (var button of $(".button")) {
     setLight(button)
   }
+
 
   // Start the Queue, set the first question, and make things visible
   startQueue();
@@ -62,7 +63,7 @@ function setQuestion(question) {
       buttons[i].innerHTML = question.answers[i];
       setLight(buttons[i]);
     }
-  
+
     // Display "Other" Prompt if Applicable
     if (question.responsePrompt == "None") {
       $("#other").hide();
@@ -74,12 +75,12 @@ function setQuestion(question) {
       other = document.getElementById("other")
       other.innerHTML = "Other";
       setLight(other);
-      
+
       response = document.getElementById("response")
       response.placeholder = question.responsePrompt;
       response.value = ""
     }
-    
+
     $("#content").fadeIn(400);
   });
 }
@@ -138,7 +139,14 @@ function next(){
     }
   }
   answers.push(selected);
-  
+
+  if(selected.length==0){
+    $("#nothingSelected").show();
+    return
+  }
+
+  $("#nothingSelected").hide();
+
   // If we have answered all of the questions, we are done
   if (QuestionQueue.length == 0) {
     $("#content").fadeOut(400);
@@ -161,7 +169,7 @@ function back(){
     $("#content").fadeOut(400);
     window.location.href="home.html";
   }
-  
+
   // Put the Question back in the front of the Queue, and load the previous
   QuestionQueue.unshift(currentPage);
   currentPage = QueueHistory.pop();
@@ -170,8 +178,8 @@ function back(){
 
 // Show Dialog Prompt
 function expand(){
-  var response = document.getElementById("response"); 
-  
+  var response = document.getElementById("response");
+
   $("#other").hide();
   $("#response").show();
 
