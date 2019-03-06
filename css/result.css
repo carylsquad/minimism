@@ -5,8 +5,21 @@ h1 {
     padding: 10px;
     margin: 5px;
   }
+
+  td {
+    width: 50%;
+    padding: 50px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  p {
+    text-align: left;
+    font-weight: 500;
+    font-size: 25px;
+  }
   
-  .result{
+  #result {
     font-size:50px;
     text-align: center;
     text-transform: uppercase;
@@ -46,7 +59,6 @@ h1 {
     justify-content: center;
     margin: auto;
     padding: 10px;
-    margin-top: 40px;
   }
   
   .nav-button{

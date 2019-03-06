@@ -19,7 +19,7 @@ function search(){
   //if there is a value, get the page that corresponds to it
   else {
     var query = $("#input").val().toLowerCase();
-    if (query == "iphone xs" || query == "pocky") {
+    if (query == "iphone xs" || query == "pocky" || query == "jeans") {
       sessionStorage.setItem("userInput", query);
       window.location.href="question.html";
     }
