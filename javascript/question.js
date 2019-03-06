@@ -67,8 +67,8 @@ function setQuestion(question) {
     // Display "Other" Prompt if Applicable
     if (question.responsePrompt == "None") {
       $("#other").hide();
-      $("#response").hide();
-    } else {
+      $("#response").hide();}
+    else {
       $("#other").show();
       $("#response").hide();
 
