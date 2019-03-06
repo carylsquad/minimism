@@ -1,7 +1,8 @@
-
 body{
   font-family: "Avenir Next" !important;
   background-color: #091d36;
+  margin: auto;
+  color: #f1f1f0;
 }
 
 #container{
@@ -30,24 +31,34 @@ body{
 #info{
   margin: 0;
   color: #3a4e7a;
-  padding: 0px 50px 0px 50px;
+  padding: 0px 50px 60px 50px;
   font-size: 20pt;
 }
 
-.submit{
-  padding: 60px 0px 60px 0px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items:center;
-
+#form{
   margin: auto;
+  width: 100%;
+  padding: 1em;
+}
+
+
+#form div+div{
+  margin-top: 1em;
+}
+
+label{
+  display: inline-block;
+  width: 200px;
+  text-align: right;
+  font-family: "Avenir Next" !important;
+  font-size: 24px;
 }
 
 input{
-  width: 50%;
+  width: 300px;
   border-radius: 10px;
   font-size: 20px;
+  margin-left: 20px;
   padding-left: 10px;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -59,6 +70,13 @@ input{
 
 input::placeholder{
   color: #B0BEC5;
+}
+
+#submit-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
 }
 
 button{
@@ -79,13 +97,17 @@ button{
 
 button:hover{
   background-color:#5e83ba;
-  border-color: #5e83ba;
   cursor: pointer;
 }
 
-#log-out-container{
-  display:flex;
-  justify-content: center;
-  font-family: "Avenir Next" !important;
+#bottom-text{
+  color: #3a4e7a;
+  font-size: 20pt;
+
+}
+
+#signup:hover{
+  cursor: pointer;
+  color:#5e83ba;
 
 }

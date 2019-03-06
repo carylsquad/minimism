@@ -14,16 +14,21 @@ function init(){
 function search(){
   //if there is no value, don't search anything
   if($("#input").val()=="") {
-    return;
-  }
+    return;}
   //if there is a value, get the page that corresponds to it
   else {
     var query = $("#input").val().toLowerCase();
-    if (query == "iphone xs" || query == "pocky") {
+    if (query == "iphone xs" || query == "pocky" || query == "jeans") {
       sessionStorage.setItem("userInput", query);
       window.location.href="question.html";
     }
   }
+}
+
+function logInPage(){
+  $('#container').fadeOut(400, function(){
+    window.location.href="login.html";
+  })
 }
 
 //run init function after window loads
