@@ -5,13 +5,12 @@ function setup() {
     responses = sessionStorage.getItem("answers").toString().split(",");
 
     // Good / bad qualities displayed in text
-    goodDisplayQualities = ["OS", "CPU", "Camera", "Social Media", "Messaging", "Flavor", "Portability", "Color", "Cut"];
-    badDisplayQualities = ["Size", "Video Streaming", "Nutrition", "Allergies"];
+    goodDisplayQualities = ["OS", "CPU", "Camera", "Social Media", "Messaging", "Flavor", "Portability", "Color", "Cut", "Looking like a boss", "Lakefill walks"];
+    badDisplayQualities = ["Size", "Video Streaming", "Nutrition", "Allergies", "Sleeping", "Slothing around"];
 
     // Good / bad qualities that count towards the chart but not displayed in text
     otherGoodQualities = ["iPhone X", "Good", "Indifferent", "This week", "This month", "Price", "1-5", "5-20"];
     otherBadQualities = ["Galaxy S9", "Pixel 3/XL", "Bad", "This year", "Never", "Brand"];
-
 
 
     if (questionPath == "iphone xs") {
@@ -21,7 +20,7 @@ function setup() {
         itemDescription.innerHTML = "Surveyed pocky eaters care the most for flavor and portability. They like snacks that are cheap, easy to eat, and they can eat often."
     }
     else if (questionPath == "jeans") {
-        itemDescription.innerHTML = "Surveyed jeans owners care the most about color and cut and own between 1-5 pairs.";
+        itemDescription.innerHTML = "Surveyed jeans owners care the most about color and cut.";
     }
 
     goodQualityCount = 0;
@@ -62,11 +61,19 @@ function setup() {
     if (yourGoodSelections.length != 0 && yourBadSelections.length != 0) {
         justification.innerHTML = "Your selection of " + goodString + " as well as others would help us to recommend this product. But your enjoyment may not be perfect based on your selection of " + badString + "."
     }
-    else if (yourGoodSelections.length == 0) {
-        justification.innerHTML = "We are worried about your enjoyment based on your selection of " + badString + "."
+    else if (yourGoodSelections.length == 0 || (goodQualityCount <= badQualityCount)) {
+        if (badString == "") {
+          justification.innerHTML = "We are worried about your enjoyment based on your selections."
+        } else {
+          justification.innerHTML = "We are worried about your enjoyment based on your selection of " + badString + "."
+        }
     }
     else if (yourBadSelections.length == 0) {
-        justification.innerHTML = "We believe you will find enjoyment based on your selection of " + goodString + "."
+        if (badString == "") {
+          justification.innerHTML = "We believe you will find enjoyment based on your selections."
+        } else {
+          justification.innerHTML = "We believe you will find enjoyment based on your selection of " + goodString + "."
+        }
     }
 
     pie_chart = {
@@ -106,6 +113,9 @@ function arrayToString(array) {
     else if (array.length == 1) {
         string = array[0];
     }
+
+    console.log(string);
+    console.log(array);
 
     return string;
 }
