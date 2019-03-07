@@ -5,6 +5,11 @@ function init(){
   $('#container').fadeIn(400);}
 
 function homePage(){
+
+  let email = document.getElementById('login-email').value
+  localStorage.setItem('email', email);
+  console.log(email);
+
   $('.warning').hide();
   var inputs=$('input');
   if(emptyInput(inputs)){

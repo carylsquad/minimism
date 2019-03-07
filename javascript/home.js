@@ -10,6 +10,12 @@ function init(){
       $("#button").click();}})
 }
 
+function setup() {
+  let info = document.getElementById('info')
+  let email = localStorage.getItem('email')
+  info.innerHTML = "Welcome, " + email + ". " + info.innerHTML
+}
+
 
 function search(){
   //if there is no value, don't search anything
