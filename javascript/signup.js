@@ -6,6 +6,10 @@ function init(){
 }
 
 function homePage(){
+  let email = document.getElementById('signup-email').value
+  localStorage.setItem('email', email);
+  console.log(email);
+
   $('.warning').hide();
   var inputs=$('input');
   if(emptyInput(inputs)){

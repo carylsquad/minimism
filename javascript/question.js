@@ -23,6 +23,7 @@ var foodThirdQuestion = new Question("When was the last time you wasted your mon
 
 var jeansFirstQuestion = new Question("What characteristics do you care about?", ["Price", "Cut", "Color", "Brand"], "I care...");
 var jeansSecondQuestion = new Question("How many of these things do you already own?", ["0", "1-5", "5-20", "My Last Name is Gates"], "I own...");
+var jeansThirdQuestion = new Question("For what purpose due you wish to purchase a brand new pair of trousers of the denim or dungaree cloth variety?", ["Slothing around", "Sleeping", "Lakefill walks", "Looking like a boss"], "I want to use them for...");
 
 // Initial Setup:
 // Set Button Colors and Show First Question
@@ -50,7 +51,7 @@ function startQueue() {
     defaultQuestions = [foodFirstQuestion, foodSecondQuestion, foodThirdQuestion];
   }
   else if (userInput == "jeans") {
-    defaultQuestions = [jeansFirstQuestion, jeansSecondQuestion];
+    defaultQuestions = [jeansFirstQuestion, jeansSecondQuestion, jeansThirdQuestion];
   }
 
   for (var i = 0; i < defaultQuestions.length; i++) {
@@ -89,7 +90,7 @@ function setQuestion(question) {
 
     currentPageNumber = History.length + 1
     totalPageCount = QuestionQueue.length + History.length + 1
-    document.getElementById("page").innerHTML = "Question " + currentPageNumber.toString() + " of " + totalPageCount.toString()  
+    document.getElementById("page").innerHTML = "Question " + currentPageNumber.toString() + " of " + totalPageCount.toString()
 
     $("#content").fadeIn(400);
   });
