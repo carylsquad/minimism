@@ -92,8 +92,16 @@ function setQuestion(question) {
     totalPageCount = QuestionQueue.length + History.length + 1
     document.getElementById("page").innerHTML = "Question " + currentPageNumber.toString() + " of " + totalPageCount.toString()
 
+    if (QuestionQueue.length == 0) {
+      document.getElementById("next").innerHTML = "Submit"
+    } else {
+      document.getElementById("next").innerHTML = "<i class='fa fa-arrow-right'></i>"
+    }
+
     $("#content").fadeIn(400);
   });
+
+
 }
 
 // Force buttons to Light (unselected) value
