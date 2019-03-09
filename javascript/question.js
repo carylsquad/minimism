@@ -23,7 +23,7 @@ var foodThirdQuestion = new Question("When was the last time you wasted your mon
 
 var jeansFirstQuestion = new Question("What characteristics do you care about?", ["Price", "Cut", "Color", "Brand"], "I care...   ⏎");
 var jeansSecondQuestion = new Question("How many of these things do you already own?", ["0", "1-5", "5-20", "My Last Name is Gates"], "I own...   ⏎");
-var jeansThirdQuestion = new Question("For what purpose due you wish to purchase a brand new pair of trousers of the denim or dungaree cloth variety?", ["Slothing around", "Sleeping", "Lakefill walks", "Looking like a boss"], "I want to use them for...   ⏎");
+var jeansThirdQuestion = new Question("For what purpose do you wish to purchase a brand new pair of trousers of the denim or dungaree cloth variety?", ["Slothing around", "Sleeping", "Lakefill walks", "Looking like a boss"], "I want to use them for...   ⏎");
 
 // Initial Setup:
 // Set Button Colors and Show First Question
