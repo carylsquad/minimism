@@ -14,28 +14,34 @@
 <body>
   <div id="container">
     <div id="title">COMMITMENT COMPLETION</div>
-    <div id="info">Wow. Don't disappoint me even more and just make an account already.</div>
-    <div id="empty-input" class="warning">Answer all the fields, genius.</div>
-    <div id="matching-passwords" class="warning">You do know the passwords need to match, right?</div>
-
-    <div id="form">
-      <div class="signup">
-        <!-- <label for="email">Email*: </label> -->
-        <input type="email" id="signup-email" name="search" placeholder="Email:">
+    <div id="flex-container">
+      <div id="info">Don't disappoint me even more and just make an account already.
+        <br>
+        Alternatively, you can disappoint me more and
+          <a id="login" onclick="logInPage()"><b>log in.<b></a>
       </div>
-      <div class="signup">
-        <!-- <label for="password">Password*:</label> -->
-        <input type="password" id="signup-password" name="search" placeholder="Password:">
-      </div>
-      <div class="signup">
-        <!-- <label for="password-confirmation">Confirm Password*:</label> -->
-        <input type="password" id="signup-password-check" name="search" placeholder="Confirm Password:">
+      <div id="form">
+        <div id="warning-container">
+          <div id="empty-input" class="warning">Answer all the fields, genius.</div>
+          <div id="matching-passwords" class="warning">You do know the passwords need to match, right?</div>
+        </div>
+        <div class="field">
+          <label for="username">Username*: </label>
+          <input type="text" id="signup-username" class="signup" name="search">
+        </div>
+        <div class="field">
+          <label for="email">Email*: </label>
+          <input type="email" id="signup-email" class="signup" name="search">
+        </div>
+        <div class="field">
+          <label for="password">Password*:</label>
+          <input type="password" id="signup-password" class="signup" name="search">
+        </div>
       </div>
     </div>
     <div id="submit-container">
-      <button id="submit" onclick="homePage()">Sign Up</button>
+      <button id="submit" onclick="homePage()"><i class="fa fa-arrow-right"></i></button>
     </div>
-    <div id="bottom-text">So you actually want to <b id="signup" onclick="logInPage()">log in?<b></div>
 
   </div>
 </body>

@@ -11,16 +11,17 @@
 
   <title>Home Page</title>
 </head>
-<body onload="setup()">
+<body>
+  <div id="log-out-container">
+    <button id="log-out" onclick="logInPage()">Log Out</button>
+  </div>
   <div id="container">
-    <div id="title">COMMITMENT COMPLETION</div>
-    <div id="info">Enter what you think you might want to buy below and we'll come up with a decision by interrogating you about it.</div>
-    <div class="submit">
+    <div id="title" class="show">COMMITMENT COMPLETION</div>
+    <div id="info" class="show">Enter what you think you might want to buy below now that you're finally on this page. By doing so, you are consenting to an interrogation that will lead to a final decision.</div>
+    <div id="error"></div>
+    <div class="submit show">
       <input type="text" id="input" name="search" placeholder="Search item...">
       <button id="button" onclick="search()"><i class="fa fa-search"></i></button>
-    </div>
-    <div id="log-out-container">
-      <button id="log-out" onclick="logInPage()">Log Out</button>
     </div>
   </div>
 </body>
