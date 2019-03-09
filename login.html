@@ -12,26 +12,27 @@
   <title>Login Page</title>
 </head>
 <body>
-  <div id="container">
-    <div id="title">COMMITMENT COMPLETION</div>
-    <div id="info">Hurry up and log in.</div>
-    <div id="empty-input" class="warning">In case you didn't notice, there are two fields.</div>
-    <div id="matching-passwords" class="warning">You do know the passwords need to match, right?</div>
-
-    <div id="form">
-      <div class="login">
-        <!-- <label for="email">Email:</label> -->
-        <input type="text" id="login-email" placeholder="Email:">
-      </div>
-      <div class="login">
-        <!-- <label for="password">Password: </label> -->
-        <input type="password" id="login-password" name="search" placeholder="Password:">
+  <div id="page-container">
+    <div id="title" class="show">COMMITMENT COMPLETION</div>
+    <div id="content-container">
+      <div id="info" class="show">Hurry up and log in. <br> Unless for some reason you still need to <a id="signup" onclick="signUpPage()"><b>make an account</b></a></div>
+      <div id="form">
+        <div id="warning-container">
+          <div id="empty-input" class="warning">In case you didn't notice, there are two fields.</div>
+        </div>
+        <div class="field show">
+          <label for="username">Username:</label>
+          <input type="text" id="login-username" class="login">
+        </div>
+        <div class="field show">
+          <label for="password">Password: </label>
+          <input type="password" id="login-password" class="login" name="search">
+        </div>
       </div>
     </div>
-    <div id="submit-container">
-      <button id="submit" onclick="homePage()">Log In</button>
+    <div id="submit-container" class="show">
+      <button id="submit" onclick="homePage()"><i class="fa fa-arrow-right"></i></button>
     </div>
-    <div id="bottom-text">Unless you need to <b id="signup" onclick="signUpPage()">make an account<b></div>
 
 
   </div>

@@ -2,6 +2,8 @@
 body{
   font-family: "Avenir Next" !important;
   background-color: #091d36;
+  color: rgb(194, 210, 233);
+
 }
 
 #container{
@@ -29,13 +31,12 @@ body{
 
 #info{
   margin: 0;
-  color: #5580dd;
-  padding: 0px 50px 0px 50px;
+  margin: 0px 50px 60px 50px;
   font-size: 20pt;
 }
 
 .submit{
-  padding: 60px 0px 60px 0px;
+  margin-bottom: 60px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -44,6 +45,11 @@ body{
   margin: auto;
 }
 
+#error{
+  display: none;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
 input{
   width: 50%;
   border-radius: 10px;
@@ -57,8 +63,12 @@ input{
   border: none;
 }
 
+input[type='text']{
+  font-family: "Avenir Next" !important;
+}
+
 input::placeholder{
-  color: #B0BEC5;
+  font-family: "Avenir Next" !important;
 }
 
 button{
@@ -70,6 +80,8 @@ button{
 
   background-color:#3a4e7a;
   color:#f1f1f0;
+
+  font-family: "Avenir Next" !important;
   font-size: 24px;
   text-decoration: none;
 
@@ -84,8 +96,8 @@ button:hover{
 }
 
 #log-out-container{
-  display:flex;
-  justify-content: center;
+  margin: 1.5em;
+  float:right;
   font-family: "Avenir Next" !important;
 
 }

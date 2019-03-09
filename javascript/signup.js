@@ -1,27 +1,28 @@
 var login = true;
 
 function init(){
-  $('.warning').hide();
-  $('#container').fadeIn(400);
+  $('#title').fadeIn(400);
+  $('#info').fadeIn(400);
+  $('.field').fadeIn(400);
+  $('#submit-container').fadeIn(400);
+
+  var fields = $('.signup');
+  for(var i =0; i<fields.length; i++){
+    fields[i].addEventListener("keyup", function(event){
+      if(event.keyCode===13){
+        event.preventDefault();
+        //simulate clicking the search button
+        $("#submit").click();}});}
 }
 
 function homePage(){
-  let email = document.getElementById('signup-email').value
-  localStorage.setItem('email', email);
-  console.log(email);
-
-  $('.warning').hide();
+  $('.warning').fadeOut(400);
   var inputs=$('input');
   if(emptyInput(inputs)){
-    $('#empty-input').show();
+    $('#empty-input').fadeIn(400);
     return}
-  var firstPassword=inputs[1].value;
-  var secondPassword=inputs[2].value;
-  if(firstPassword!==secondPassword){
-    $('#matching-passwords').show();
-    return
-  }
   $('#container').fadeOut(400, function(){
+    localStorage.setItem('username', inputs[0].value);
     window.location.href="home.html";});
 }
 
@@ -33,7 +34,7 @@ function emptyInput(inputs){
 }
 
 function logInPage(){
-  $('.warning').hide();
+  $('.warning').fadeOut(400);
   $('input').value="";
   $('#container').fadeOut(400, function(){
   window.location.href="login.html";});

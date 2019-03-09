@@ -1,21 +1,25 @@
 var login = true;
 
 function init(){
-  $('.warning').hide();
-  $('#container').fadeIn(400);}
+  var fields = $('.login');
+  for(var i =0; i<fields.length; i++){
+    fields[i].addEventListener("keyup", function(event){
+      if(event.keyCode===13){
+        event.preventDefault();
+        //simulate clicking the search button
+        homePage();}});
+  }
+}
+
 
 function homePage(){
-
-  let email = document.getElementById('login-email').value
-  localStorage.setItem('email', email);
-  console.log(email);
-
-  $('.warning').hide();
+  $('.warning').fadeOut(400);
   var inputs=$('input');
   if(emptyInput(inputs)){
-    $('#empty-input').show();
+    $('#empty-input').fadeIn(400);
     return}
-  $('#container').fadeOut(400, function(){
+  $('#page-container').fadeOut(400, function(){
+    localStorage.setItem('username', inputs[0].value);
     window.location.href="home.html";});
 }
 
@@ -27,10 +31,10 @@ function emptyInput(inputs){
 }
 
 function signUpPage(){
-  $('.warning').hide();
+  $('.warning').fadeOut(400);
   $('input').value="";
-  $('#container').fadeOut(400, function(){
-  window.location.href="signup.html";});
+  $('#page-container').fadeOut(400, function(){
+    window.location.href="signup.html";});
 }
 
 
