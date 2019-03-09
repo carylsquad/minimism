@@ -13,17 +13,17 @@ var QuestionQueue = [];
 var History = [];
 
 // Questions
-var iPhoneFirstQuestion = new Question("Fantastic! iPhone XS is great. What characteristics do you give a shit about? Don't be stupid and check all that apply.", ["OS", "Size", "CPU", "Camera"], "I care...");
-var iPhoneSecondQuestion = new Question("What piece of garbage do you currently use?", ["iPhone X", "Galaxy S9", "Pixel 3/XL", "OnePlus 6T"], "My phone is...");
-var iPhoneThirdQuestion = new Question("What do you waste your time on when using your phone?", ["Social Media", "Video Streaming", "Messaging", "Games"], "I use...");
+var iPhoneFirstQuestion = new Question("Fantastic! iPhone XS is great. What characteristics do you give a shit about? Don't be stupid and check all that apply.", ["OS", "Size", "CPU", "Camera"], "I care...   ⏎");
+var iPhoneSecondQuestion = new Question("What piece of garbage do you currently use?", ["iPhone X", "Galaxy S9", "Pixel 3/XL", "OnePlus 6T"], "My phone is...   ⏎");
+var iPhoneThirdQuestion = new Question("What do you waste your time on when using your phone?", ["Social Media", "Video Streaming", "Messaging", "Games"], "I use...   ⏎");
 
-var foodFirstQuestion = new Question("Okay, that might taste good. Why are you even interested in Pocky? Don't be lazy and check all that apply.", ["Flavor", "Nutrition", "Allergies", "Portability"], "I like...");
-var foodSecondQuestion = new Question("In all seriousness, how do you feel about the price?", ["Bad", "Okay", "Good", "Indifferent"], "It's...");
-var foodThirdQuestion = new Question("When was the last time you wasted your money on some Pocky?", ["This week", "This month", "This year", "Never"], "It was...");
+var foodFirstQuestion = new Question("Okay, that might taste good. Why are you even interested in Pocky? Don't be lazy and check all that apply.", ["Flavor", "Nutrition", "Allergies", "Portability"], "I like...   ⏎");
+var foodSecondQuestion = new Question("In all seriousness, how do you feel about the price?", ["Bad", "Okay", "Good", "Indifferent"], "It's...   ⏎");
+var foodThirdQuestion = new Question("When was the last time you wasted your money on some Pocky?", ["This week", "This month", "This year", "Never"], "It was...   ⏎");
 
-var jeansFirstQuestion = new Question("What characteristics do you care about?", ["Price", "Cut", "Color", "Brand"], "I care...");
-var jeansSecondQuestion = new Question("How many of these things do you already own?", ["0", "1-5", "5-20", "My Last Name is Gates"], "I own...");
-var jeansThirdQuestion = new Question("For what purpose due you wish to purchase a brand new pair of trousers of the denim or dungaree cloth variety?", ["Slothing around", "Sleeping", "Lakefill walks", "Looking like a boss"], "I want to use them for...");
+var jeansFirstQuestion = new Question("What characteristics do you care about?", ["Price", "Cut", "Color", "Brand"], "I care...   ⏎");
+var jeansSecondQuestion = new Question("How many of these things do you already own?", ["0", "1-5", "5-20", "My Last Name is Gates"], "I own...   ⏎");
+var jeansThirdQuestion = new Question("For what purpose due you wish to purchase a brand new pair of trousers of the denim or dungaree cloth variety?", ["Slothing around", "Sleeping", "Lakefill walks", "Looking like a boss"], "I want to use them for...   ⏎");
 
 // Initial Setup:
 // Set Button Colors and Show First Question
