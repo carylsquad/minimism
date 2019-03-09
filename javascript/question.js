@@ -74,7 +74,8 @@ function setQuestion(question) {
     // Display "Other" Prompt if Applicable
     if (question.responsePrompt == "None") {
       $("#other").hide();
-      $("#response").hide();}
+      $("#response").hide();
+    }
     else {
       $("#other").show();
       $("#response").hide();
@@ -202,21 +203,32 @@ function expand(){
   $("#other").hide();
   $("#response").show();
 
+  response.focus();
+
+  function toggleResponse() {
+    if (response.value != "") {
+      other.innerHTML = response.value;
+      setDark(other);
+    }
+    else {
+      other.innerHTML = "Other";
+      setLight(other);
+    }
+
+    $("#response").hide();
+    $("#other").show();
+  }
+
   response.addEventListener("keyup", function(event) {
     if (event.keyCode == 13) {
       event.preventDefault();
-      if (response.value != "") {
-        other.innerHTML = response.value;
-        setDark(other);
-      }
-      else {
-        other.innerHTML = "Other";
-        setLight(other);
-      }
+      toggleResponse()
+    }
+  });
 
-      $("#response").hide();
-      $("#other").show();
-    }});
+  response.onblur = function() {
+    toggleResponse();
+  }
 }
 
 window.onload=setup;
