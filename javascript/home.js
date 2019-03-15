@@ -41,6 +41,8 @@ function errorMessage(query){
     error.innerHTML="What the hell is "+query+"? Did you actually mean an iPhone XS?"}
   else if(start_char=="j"){
     error.innerHTML="What the hell is "+query+"? Did you actually mean jeans?"}
+  else if(start_char=="l"){
+    error.innerHTML="What the hell is "+query+"? Did you actually mean lawn mowing service?"}
   else{error.innerHTML="Who taught you how to spell? Try again."}
   $('#error').fadeIn(400);
   document.getElementById('info').style.marginBottom="30px";
