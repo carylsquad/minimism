@@ -26,7 +26,7 @@ var jeansSecondQuestion = new Question("How many of these things do you already 
 var jeansThirdQuestion = new Question("For what purpose do you wish to purchase a brand new pair of trousers of the denim or dungaree cloth variety?", ["Slothing around", "Sleeping", "Lakefill walks", "Looking like a boss"], "I want to use them for...   ⏎");
 
 var lawnFirstQuestion = new Question("How many hours does it take for you to mow the lawn? Knowing you, I'm guessing a lifetime and a year.", ["1-2", "3", "4-5", "6+"], "It takes...   ⏎")
-var lawnSecondQuestion = new Question("I doubt that you even mow your lawn, but it's my job to ask the questions here. Riddle me this: how frequently do you mow the lawn?", ["Once a Week", "Once Every 2 Weeks", "Once A Month", "I Barely Ever Mow It"], "I mow every...   ⏎")
+var lawnSecondQuestion = new Question("I doubt that you even mow your lawn, but it's my job to ask the questions here. Riddle me this: how frequently do you mow the lawn?", ["Once a Week", "Once Every 2 Weeks", "Once A Month", "I Barely Have To"], "I mow every...   ⏎")
 var lawnThirdQuestion = new Question("Don't know why you'd enjoy mowing the lawn, but tell me how much you like that.", ["I Live For It", "I Look Forward to It", "I Don't Mind It", "I Hate It"], "I feel...   ⏎")
 
 // Initial Setup:
