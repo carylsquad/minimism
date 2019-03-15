@@ -24,7 +24,7 @@ function search(){
   //if there is a value, get the page that corresponds to it
   else {
     var query = $("#input").val().toLowerCase();
-    if (query == "iphone xs" || query == "pocky" || query == "jeans") {
+    if (query == "iphone xs" || query == "pocky" || query == "jeans" || query == "lawn mowing service") {
       sessionStorage.setItem("userInput", query);
       document.getElementById('info').style.marginBottom="80px"
       window.location.href="question.html";}

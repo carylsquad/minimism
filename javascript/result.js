@@ -12,15 +12,27 @@ function setup() {
     otherGoodQualities = ["iPhone X", "Good", "Indifferent", "This week", "This month", "Price", "1-5", "5-20"];
     otherBadQualities = ["Galaxy S9", "Pixel 3/XL", "Bad", "This year", "Never", "Brand"];
 
+    graphTitle = "";
+    graphPositiveLabel = "";
+    graphNegativeLabel = "";
 
     if (questionPath == "iphone xs") {
-        itemDescription.innerHTML = "Surveyed iPhone XS users care the most about having iOS and a good camera. They spend most of their time using social media and messaging."
+        itemDescription.innerHTML = "Surveyed iPhone XS users care the most about having iOS and a good camera. They spend most of their time using social media and messaging.";
+        graphTitle = "How the iPhone XS Satisfies ";
+        graphPositiveLabel = "Satisfied by iPhone XS";
+        graphNegativeLabel = "Unsatisfied by iPhone XS";
     }
     else if (questionPath == "pocky") {
-        itemDescription.innerHTML = "Surveyed pocky eaters care the most for flavor and portability. They like snacks that are cheap, easy to eat, and they can eat often."
+        itemDescription.innerHTML = "Surveyed pocky eaters care the most for flavor and portability. They like snacks that are cheap, easy to eat, and they can eat often.";
+        graphTitle = "How Pocky Satisfies ";
+        graphPositiveLabel = "Satisfied by Pocky";
+        graphNegativeLabel = "Unsatisfied by Pocky";
     }
     else if (questionPath == "jeans") {
         itemDescription.innerHTML = "Surveyed jeans owners care the most about color and cut.";
+        graphTitle = "How Jeans Satisfy ";
+        graphPositiveLabel = "Satisfied with Jeans";
+        graphNegativeLabel = "Unsatisfied with Jeans";
     }
 
     goodQualityCount = 0;
@@ -29,20 +41,27 @@ function setup() {
     yourGoodSelections = [];
     yourBadSelections = [];
 
+    graphGoodSelections = [];
+    graphBadSelections = [];
+
     // Sort the responses and count where each belongs
     for (response of responses) {
         if (goodDisplayQualities.includes(response)) {
             yourGoodSelections.push(response);
+            graphGoodSelections.push(response);
             goodQualityCount += 1;
         }
         else if (otherGoodQualities.includes(response)) {
             goodQualityCount += 1;
+            graphGoodSelections.push(response);
         }
         else if (badDisplayQualities.includes(response)) {
             yourBadSelections.push(response);
+            graphBadSelections.push(response);
             badQualityCount += 1;
         }
         else if (otherBadQualities.includes(response)) {
+            graphBadSelections.push(response);
             badQualityCount += 1;
         }
     }
@@ -56,6 +75,22 @@ function setup() {
     } else {
         document.getElementById("result").innerHTML = "Skip It!"
     }
+
+    // Add Descriptor to Graph Title
+    if (goodQualityCount == 0) {
+        graphTitle += "None";
+    }
+    else if (badQualityCount == 0) {
+        graphTitle += "All";
+    }
+    else if (goodQualityCount > badQualityCount) {
+        graphTitle += "Most";
+    }
+    else {
+        graphTitle += "Some";
+    }
+
+    graphTitle += " of Your Requirements.";
 
     // Show the justification
     if (yourGoodSelections.length != 0 && yourBadSelections.length != 0) {
@@ -78,7 +113,7 @@ function setup() {
 
     pie_chart = {
           'data': [{
-            'labels': ["Qualities It Has", "Qualities It Doesn't Have"],
+            'labels': [graphPositiveLabel, graphNegativeLabel],
             'values': [goodQualityCount, badQualityCount],
             'marker': {
                 'colors': ['rgb(58, 79, 122)', 'rgb(194, 210, 249)']
@@ -89,10 +124,24 @@ function setup() {
 
           'layout': {
             paper_bgcolor: "rgba(50,50,50,0)",
-            title: 'Qualities You Chose',
+            title: graphTitle,
             font: {
                 color: "#ffffff",
-            }
+            },
+            annotations: [
+                {
+                    showarrow: false,
+                    text: "Unsatisfied:<br>" + graphBadSelections.toString().split(",").join("<br>"),
+                    x: -0.3,
+                    y: 1,
+                },
+                {
+                    showarrow: false,
+                    text: "Satisfied:<br>" + graphGoodSelections.toString().split(",").join("<br>"),
+                    x: 1.5,
+                    y: 0.5,
+                },
+            ],
           }
         }
     Plotly.newPlot('graph', pie_chart.data, pie_chart.layout)
@@ -113,9 +162,6 @@ function arrayToString(array) {
     else if (array.length == 1) {
         string = array[0];
     }
-
-    console.log(string);
-    console.log(array);
 
     return string;
 }
