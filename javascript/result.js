@@ -90,7 +90,7 @@ function setup() {
         graphTitle += "Some";
     }
 
-    graphTitle += " of Your Requirements.";
+    graphTitle += " of Your Requirements";
 
     // Show the justification
     if (yourGoodSelections.length != 0 && yourBadSelections.length != 0) {
