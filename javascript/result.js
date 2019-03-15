@@ -5,8 +5,8 @@ function setup() {
     responses = sessionStorage.getItem("answers").toString().split(",");
 
     // Good / bad qualities displayed in text
-    goodDisplayQualities = ["OS", "CPU", "Camera", "Social Media", "Messaging", "Flavor", "Portability", "Color", "Cut", "Looking like a boss", "Lakefill walks"];
-    badDisplayQualities = ["Size", "Video Streaming", "Nutrition", "Allergies", "Sleeping", "Slothing around"];
+    goodDisplayQualities = ["OS", "CPU", "Camera", "Social Media", "Messaging", "Flavor", "Portability", "Color", "Cut", "Looking like a boss", "Lakefill walks", "I Hate It", "Once a Week", "4-5", "6+"];
+    badDisplayQualities = ["Size", "Video Streaming", "Nutrition", "Allergies", "Sleeping", "Slothing around", "1-2", "Once A Month", "I Barely Have To", "I Live For It", "I Look Forward to It"];
 
     // Good / bad qualities that count towards the chart but not displayed in text
     otherGoodQualities = ["iPhone X", "Good", "Indifferent", "This week", "This month", "Price", "1-5", "5-20"];
@@ -33,6 +33,12 @@ function setup() {
         graphTitle = "How Jeans Satisfy ";
         graphPositiveLabel = "Satisfied with Jeans";
         graphNegativeLabel = "Unsatisfied with Jeans";
+    }
+    else if (questionPath == "lawn mowing service") {
+        itemDescription.innerHTML = "People who use lawn services have large yards that take a long time to mow.";
+        graphTitle = "How a Lawn Service Satisfies ";
+        graphPositiveLabel = "Satisfied with Service";
+        graphNegativeLabel = "Unsatisfied with Service";
     }
 
     goodQualityCount = 0;
@@ -90,11 +96,11 @@ function setup() {
         graphTitle += "Some";
     }
 
-    graphTitle += " of Your Requirements";
+    graphTitle += " of Your Preferences";
 
     // Show the justification
     if (yourGoodSelections.length != 0 && yourBadSelections.length != 0) {
-        justification.innerHTML = "Your selection of " + goodString + " as well as others would help us to recommend this product. But your enjoyment may not be perfect based on your selection of " + badString + "."
+        justification.innerHTML = "Your selection of " + goodString + " as well as others would help us to recommend this. But your enjoyment may not be perfect based on your selection of " + badString + "."
     }
     else if (yourGoodSelections.length == 0 || (goodQualityCount <= badQualityCount)) {
         if (badString == "") {
